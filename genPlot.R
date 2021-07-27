@@ -79,50 +79,6 @@ for(i in seq(length(meth)))
 ####Part 2
 
 
-#  for(l in q)
-#  {
-#    for(i in seq_along(meth))
-#   {
-#      for(j in seq_along(N))
-#      {
-#        for(k in seq_along(ind))
-#        {
-#          s=ind[[k]][1]
-#          t=ind[[k]][2]
-# 
-#          target=p_pt2[s]-p_pt2[t]
-# 
-#          text=paste("p",s,"-p",t,sep="")
-# 
-#          datatoload=paste(meth[i],text,sep = "_")
-# 
-#          data=get(load(paste("Out/Part 2/CI",datatoload,N[j],l,"Rdata",sep=".")))
-# 
-# 
-# 
-#         png(paste("Graphics/Part 2/Part2_",paste(text,N[j],meth[i],l,"png",sep="."),sep=""),width=1600,height=800,res=120)
-# 
-#         plot.conf.int(data$ConfInt,data$CI.out,target,text,N[j],meth[i],qvalue=l,q=TRUE)
-# 
-# 
-#         graphics.off()
-#        }
-# 
-#      }
-# 
-#    }
-# 
-#  }
-
-
-
-
-
-
-
-
-
-
 for(k in seq_along(ind))
 {
   s=ind[[k]][1]
@@ -204,41 +160,6 @@ for(k in seq_along(ind))
     }
     
   }
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# X=get(load(paste("Out/Part 1/CIa_mix",N[1],"RData",sep=".")))
-# 
-# mainQQ = paste("Normal Q-Q Plot of ",N[1]," Sample ","Proportions",sep="")
-# qqnorm(X$d,main=mainQQ,pch=19)
-# abline(c(mean(X$d),sd(X$d)))
-# title(sub=paste("Sample size =",N[1]))
-
-
-# X=get(load(paste("Out/Part 1/CIa",paste(meth[1],text,sep = "_"),N[1],"Rdata",sep=".")))
-# 
-# mainQQ = paste("Normal Q-Q Plot of ",N[1]," Sample ","Proportions",sep="")
-# qqnorm(X$ConfInt,main=mainQQ,pch=19)
-# abline(c(mean(X$ConfInt),sd(X$ConfInt)))
-# title(sub=paste("Sample size =",N[1]))
 
 
 
@@ -291,31 +212,7 @@ mtext("Part 1 Item b",outer=TRUE,line=-3.25,cex=1.2)
 
 graphics.off()
 
-# for(i in seq(length(q)))
-# {
-#   load(paste("Out/Part 2/p.out",q[i],"RData",sep="."))
-#   
-#   png(paste(paste("Graphics/ Part 2 q = ",q[i],sep=""), "png",sep="."),width=1600,height=800,res=120)
-#   
-#   yLim = c(0,max(c(2*alpha,p.out)))
-#   
-#   plot(N,p.out[1,],xaxt="none",type="n",pch=meths.pch[1],ylim=yLim,ylab="Miscoverage Probability",
-#        xlab="Sample size")
-#   axis(1, N)
-#   for(k in seq(nmeths)) {
-#     lines(N,p.out[k,],type="p",pch=meths.pch[k])
-#     lines(N,p.out[k,],type="c",col=cols[k],lwd=2)
-#   }
-#   abline(h=alpha,col="red",lwd=2)
-#   abline(h=0,col="blue",lwd=2)
-#   
-#   legend(max(N),0.3,legend=meth,pch=meths.pch,xjust=1,yjust=1,cex=.9,text.col=cols,title="Methods",title.col="black")
-#   mtext("Miscoverage Probability vs Sample Size",outer=TRUE,cex=1.33,font=2,line=-2)
-#   mtext(paste("Part 2 q = ",q[i],sep=""),outer=TRUE,line=-3.25,cex=1.2)
-#   
-#   graphics.off()
-#   
-# }
+
 
 for(k in seq_along(N))
 {
